@@ -1,4 +1,4 @@
-# Install script for directory: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/sfml
+# Install script for directory: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/sfml
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,14 +39,14 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/SimpleDepthViewer-SFML/cmake_install.cmake")
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/SimpleStreamViewer-SFML/cmake_install.cmake")
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML/cmake_install.cmake")
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/MultiSensorViewer-SFML/cmake_install.cmake")
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/SimpleBodyViewer-SFML/cmake_install.cmake")
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/MaskedColorViewer-SFML/cmake_install.cmake")
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/ColorizedBodyViewer-SFML/cmake_install.cmake")
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/RotatedBodyViewer-SFML/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/SimpleDepthViewer-SFML/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/SimpleStreamViewer-SFML/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/MultiSensorViewer-SFML/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/SimpleBodyViewer-SFML/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/MaskedColorViewer-SFML/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/ColorizedBodyViewer-SFML/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/RotatedBodyViewer-SFML/cmake_install.cmake")
 
 endif()
 

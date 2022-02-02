@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall -fPIC -std=c++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/include -I/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/common 
+CXX_INCLUDES = -I/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include -I/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/common 
 

@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/tools/DebugHandViewer/main.cpp" "/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.o"
+  "/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/tools/DebugHandViewer/main.cpp" "/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/include"
+  "/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include"
   "../common"
   )
 

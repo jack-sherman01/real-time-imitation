@@ -63,10 +63,10 @@ RM = /usr/cmake-3.17.3-Linux-x86_64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples
+CMAKE_SOURCE_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build
+CMAKE_BINARY_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build
 
 # Include any dependencies generated for this target.
 include c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/depend.make
@@ -79,16 +79,16 @@ include c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/flags.make
 
 c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/main.c.o: c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/flags.make
 c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/main.c.o: ../c-api/ColorReaderPoll/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/main.c.o"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ColorReaderPoll.dir/main.c.o   -c /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/ColorReaderPoll/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/main.c.o"
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ColorReaderPoll.dir/main.c.o   -c /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/ColorReaderPoll/main.c
 
 c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ColorReaderPoll.dir/main.c.i"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/ColorReaderPoll/main.c > CMakeFiles/ColorReaderPoll.dir/main.c.i
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/ColorReaderPoll/main.c > CMakeFiles/ColorReaderPoll.dir/main.c.i
 
 c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ColorReaderPoll.dir/main.c.s"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/ColorReaderPoll/main.c -o CMakeFiles/ColorReaderPoll.dir/main.c.s
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/ColorReaderPoll/main.c -o CMakeFiles/ColorReaderPoll.dir/main.c.s
 
 # Object files for target ColorReaderPoll
 ColorReaderPoll_OBJECTS = \
@@ -99,12 +99,12 @@ ColorReaderPoll_EXTERNAL_OBJECTS =
 
 bin/ColorReaderPoll: c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/main.c.o
 bin/ColorReaderPoll: c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/build.make
-bin/ColorReaderPoll: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra_core.so
-bin/ColorReaderPoll: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra_core_api.so
-bin/ColorReaderPoll: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra.so
+bin/ColorReaderPoll: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra_core.so
+bin/ColorReaderPoll: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra_core_api.so
+bin/ColorReaderPoll: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra.so
 bin/ColorReaderPoll: c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../bin/ColorReaderPoll"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ColorReaderPoll.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../bin/ColorReaderPoll"
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ColorReaderPoll.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/build: bin/ColorReaderPoll
@@ -112,10 +112,10 @@ c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/build: bin/ColorReaderPoll
 .PHONY : c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/build
 
 c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/clean:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll && $(CMAKE_COMMAND) -P CMakeFiles/ColorReaderPoll.dir/cmake_clean.cmake
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll && $(CMAKE_COMMAND) -P CMakeFiles/ColorReaderPoll.dir/cmake_clean.cmake
 .PHONY : c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/clean
 
 c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/depend:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/ColorReaderPoll /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/ColorReaderPoll /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : c-api/ColorReaderPoll/CMakeFiles/ColorReaderPoll.dir/depend
 

@@ -63,10 +63,10 @@ RM = /usr/cmake-3.17.3-Linux-x86_64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples
+CMAKE_SOURCE_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build
+CMAKE_BINARY_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build
 
 # Include any dependencies generated for this target.
 include c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/depend.make
@@ -79,16 +79,16 @@ include c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/flags.make
 
 c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/main.c.o: c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/flags.make
 c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/main.c.o: ../c-api/ColorReaderEvent/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/main.c.o"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ColorReaderEvent.dir/main.c.o   -c /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/ColorReaderEvent/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/main.c.o"
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ColorReaderEvent.dir/main.c.o   -c /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/ColorReaderEvent/main.c
 
 c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ColorReaderEvent.dir/main.c.i"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/ColorReaderEvent/main.c > CMakeFiles/ColorReaderEvent.dir/main.c.i
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/ColorReaderEvent/main.c > CMakeFiles/ColorReaderEvent.dir/main.c.i
 
 c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ColorReaderEvent.dir/main.c.s"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/ColorReaderEvent/main.c -o CMakeFiles/ColorReaderEvent.dir/main.c.s
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/ColorReaderEvent/main.c -o CMakeFiles/ColorReaderEvent.dir/main.c.s
 
 # Object files for target ColorReaderEvent
 ColorReaderEvent_OBJECTS = \
@@ -99,12 +99,12 @@ ColorReaderEvent_EXTERNAL_OBJECTS =
 
 bin/ColorReaderEvent: c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/main.c.o
 bin/ColorReaderEvent: c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/build.make
-bin/ColorReaderEvent: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra_core.so
-bin/ColorReaderEvent: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra_core_api.so
-bin/ColorReaderEvent: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra.so
+bin/ColorReaderEvent: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra_core.so
+bin/ColorReaderEvent: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra_core_api.so
+bin/ColorReaderEvent: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra.so
 bin/ColorReaderEvent: c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../bin/ColorReaderEvent"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ColorReaderEvent.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../bin/ColorReaderEvent"
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ColorReaderEvent.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/build: bin/ColorReaderEvent
@@ -112,10 +112,10 @@ c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/build: bin/ColorReaderEve
 .PHONY : c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/build
 
 c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/clean:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent && $(CMAKE_COMMAND) -P CMakeFiles/ColorReaderEvent.dir/cmake_clean.cmake
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent && $(CMAKE_COMMAND) -P CMakeFiles/ColorReaderEvent.dir/cmake_clean.cmake
 .PHONY : c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/clean
 
 c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/depend:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/ColorReaderEvent /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/ColorReaderEvent /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : c-api/ColorReaderEvent/CMakeFiles/ColorReaderEvent.dir/depend
 

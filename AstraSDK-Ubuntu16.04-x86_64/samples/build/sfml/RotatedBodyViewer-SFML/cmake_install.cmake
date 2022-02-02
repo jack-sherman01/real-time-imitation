@@ -1,4 +1,4 @@
-# Install script for directory: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/sfml/RotatedBodyViewer-SFML
+# Install script for directory: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/sfml/RotatedBodyViewer-SFML
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

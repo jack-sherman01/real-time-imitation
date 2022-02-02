@@ -19,7 +19,7 @@
 #include <iostream>
 #include <cstring>
 #include <sstream>
-
+#include "astra/streams/Body.hpp"
 
 class sfLine : public sf::Drawable
 {

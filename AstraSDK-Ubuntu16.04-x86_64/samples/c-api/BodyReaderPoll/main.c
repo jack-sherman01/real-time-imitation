@@ -108,7 +108,7 @@ void output_joint(const int32_t bodyId, const astra_joint_t* joint)
     // which is obtained from astra_bodyframe_info().
     const astra_vector2f_t* depthPos = &joint->depthPosition;
 
-    printf("Body %u Joint %d status %d @ world (%.1f, %.1f, %.1f) depth (%.1f, %.1f)\n",
+    printf("Body %u Joint %d status %d @ Right_hand_world_position (%.1f, %.1f, %.1f) depth (%.1f, %.1f)\n",
            bodyId,
            jointType,
            jointStatus,
@@ -125,9 +125,9 @@ void output_joint(const int32_t bodyId, const astra_joint_t* joint)
     const astra_vector3f_t* yAxis = &orientation->yAxis; // same as orientation->m01, m11, m21
     const astra_vector3f_t* zAxis = &orientation->zAxis; // same as orientation->m02, m12, m22
 
-    printf("Head orientation x: [%f %f %f]\n", xAxis->x, xAxis->y, xAxis->z);
-    printf("Head orientation y: [%f %f %f]\n", yAxis->x, yAxis->y, yAxis->z);
-    printf("Head orientation z: [%f %f %f]\n", zAxis->x, zAxis->y, zAxis->z);
+    printf("Right Hand orientation x: [%f %f %f]\n", xAxis->x, xAxis->y, xAxis->z);
+    printf("Right Hand orientation y: [%f %f %f]\n", yAxis->x, yAxis->y, yAxis->z);
+    printf("Right Hand orientation z: [%f %f %f]\n", zAxis->x, zAxis->y, zAxis->z);
 }
 
 void output_hand_poses(const astra_body_t* body)
@@ -196,7 +196,7 @@ void output_bodies(astra_bodyframe_t bodyFrame)
                 jointTrackingEnabled       ? "True" : "False",
                 handPoseRecognitionEnabled ? "True" : "False");
 
-            const astra_joint_t* joint = &body->joints[ASTRA_JOINT_HEAD];
+            const astra_joint_t* joint = &body->joints[ASTRA_JOINT_RIGHT_HAND];
 
             output_joint(bodyId, joint);
 

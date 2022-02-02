@@ -63,10 +63,10 @@ RM = /usr/cmake-3.17.3-Linux-x86_64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples
+CMAKE_SOURCE_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build
+CMAKE_BINARY_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build
 
 # Include any dependencies generated for this target.
 include tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/depend.make
@@ -79,16 +79,16 @@ include tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/flags.make
 
 tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.o: tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/flags.make
 tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.o: ../tools/DebugHandViewer/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.o"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DebugHandViewer.dir/main.cpp.o -c /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/tools/DebugHandViewer/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.o"
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DebugHandViewer.dir/main.cpp.o -c /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/tools/DebugHandViewer/main.cpp
 
 tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DebugHandViewer.dir/main.cpp.i"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/tools/DebugHandViewer/main.cpp > CMakeFiles/DebugHandViewer.dir/main.cpp.i
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/tools/DebugHandViewer/main.cpp > CMakeFiles/DebugHandViewer.dir/main.cpp.i
 
 tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DebugHandViewer.dir/main.cpp.s"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/tools/DebugHandViewer/main.cpp -o CMakeFiles/DebugHandViewer.dir/main.cpp.s
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/tools/DebugHandViewer/main.cpp -o CMakeFiles/DebugHandViewer.dir/main.cpp.s
 
 # Object files for target DebugHandViewer
 DebugHandViewer_OBJECTS = \
@@ -99,9 +99,9 @@ DebugHandViewer_EXTERNAL_OBJECTS =
 
 bin/DebugHandViewer: tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.o
 bin/DebugHandViewer: tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build.make
-bin/DebugHandViewer: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra_core.so
-bin/DebugHandViewer: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra_core_api.so
-bin/DebugHandViewer: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra.so
+bin/DebugHandViewer: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra_core.so
+bin/DebugHandViewer: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra_core_api.so
+bin/DebugHandViewer: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra.so
 bin/DebugHandViewer: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
 bin/DebugHandViewer: /usr/lib/x86_64-linux-gnu/libsfml-window.so
 bin/DebugHandViewer: /usr/lib/x86_64-linux-gnu/libsfml-system.so
@@ -109,8 +109,8 @@ bin/DebugHandViewer: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
 bin/DebugHandViewer: /usr/lib/x86_64-linux-gnu/libsfml-window.so
 bin/DebugHandViewer: /usr/lib/x86_64-linux-gnu/libsfml-system.so
 bin/DebugHandViewer: tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/DebugHandViewer"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DebugHandViewer.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/DebugHandViewer"
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DebugHandViewer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build: bin/DebugHandViewer
@@ -118,10 +118,10 @@ tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build: bin/DebugHandViewer
 .PHONY : tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build
 
 tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/clean:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer && $(CMAKE_COMMAND) -P CMakeFiles/DebugHandViewer.dir/cmake_clean.cmake
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer && $(CMAKE_COMMAND) -P CMakeFiles/DebugHandViewer.dir/cmake_clean.cmake
 .PHONY : tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/clean
 
 tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/depend:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/tools/DebugHandViewer /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/tools/DebugHandViewer /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/depend
 

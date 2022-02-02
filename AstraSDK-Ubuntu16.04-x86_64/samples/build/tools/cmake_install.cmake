@@ -1,4 +1,4 @@
-# Install script for directory: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/tools
+# Install script for directory: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/tools
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer/cmake_install.cmake")
 
 endif()
 

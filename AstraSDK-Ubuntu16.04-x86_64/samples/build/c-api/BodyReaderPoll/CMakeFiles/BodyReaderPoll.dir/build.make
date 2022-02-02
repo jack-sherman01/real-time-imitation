@@ -63,10 +63,10 @@ RM = /usr/cmake-3.17.3-Linux-x86_64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples
+CMAKE_SOURCE_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build
+CMAKE_BINARY_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build
 
 # Include any dependencies generated for this target.
 include c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/depend.make
@@ -79,16 +79,16 @@ include c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/flags.make
 
 c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/main.c.o: c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/flags.make
 c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/main.c.o: ../c-api/BodyReaderPoll/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/main.c.o"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/BodyReaderPoll.dir/main.c.o   -c /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/BodyReaderPoll/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/main.c.o"
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/BodyReaderPoll.dir/main.c.o   -c /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/BodyReaderPoll/main.c
 
 c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/BodyReaderPoll.dir/main.c.i"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/BodyReaderPoll/main.c > CMakeFiles/BodyReaderPoll.dir/main.c.i
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/BodyReaderPoll/main.c > CMakeFiles/BodyReaderPoll.dir/main.c.i
 
 c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BodyReaderPoll.dir/main.c.s"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/BodyReaderPoll/main.c -o CMakeFiles/BodyReaderPoll.dir/main.c.s
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/BodyReaderPoll/main.c -o CMakeFiles/BodyReaderPoll.dir/main.c.s
 
 # Object files for target BodyReaderPoll
 BodyReaderPoll_OBJECTS = \
@@ -99,12 +99,12 @@ BodyReaderPoll_EXTERNAL_OBJECTS =
 
 bin/BodyReaderPoll: c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/main.c.o
 bin/BodyReaderPoll: c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/build.make
-bin/BodyReaderPoll: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra_core.so
-bin/BodyReaderPoll: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra_core_api.so
-bin/BodyReaderPoll: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra.so
+bin/BodyReaderPoll: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra_core.so
+bin/BodyReaderPoll: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra_core_api.so
+bin/BodyReaderPoll: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra.so
 bin/BodyReaderPoll: c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../bin/BodyReaderPoll"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BodyReaderPoll.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../bin/BodyReaderPoll"
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BodyReaderPoll.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/build: bin/BodyReaderPoll
@@ -112,10 +112,10 @@ c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/build: bin/BodyReaderPoll
 .PHONY : c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/build
 
 c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/clean:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll && $(CMAKE_COMMAND) -P CMakeFiles/BodyReaderPoll.dir/cmake_clean.cmake
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll && $(CMAKE_COMMAND) -P CMakeFiles/BodyReaderPoll.dir/cmake_clean.cmake
 .PHONY : c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/clean
 
 c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/depend:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/BodyReaderPoll /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/BodyReaderPoll /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : c-api/BodyReaderPoll/CMakeFiles/BodyReaderPoll.dir/depend
 

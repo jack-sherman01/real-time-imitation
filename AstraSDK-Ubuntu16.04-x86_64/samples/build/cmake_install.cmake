@@ -1,4 +1,4 @@
-# Install script for directory: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples
+# Install script for directory: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,10 +39,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/cmake_install.cmake")
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/cpp-api/cmake_install.cmake")
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/cmake_install.cmake")
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/tools/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/cpp-api/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/tools/cmake_install.cmake")
 
 endif()
 
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

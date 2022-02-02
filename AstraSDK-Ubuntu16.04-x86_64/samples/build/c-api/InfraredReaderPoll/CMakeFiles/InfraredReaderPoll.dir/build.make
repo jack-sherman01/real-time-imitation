@@ -63,10 +63,10 @@ RM = /usr/cmake-3.17.3-Linux-x86_64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples
+CMAKE_SOURCE_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build
+CMAKE_BINARY_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build
 
 # Include any dependencies generated for this target.
 include c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/depend.make
@@ -79,16 +79,16 @@ include c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/flags.make
 
 c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/main.c.o: c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/flags.make
 c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/main.c.o: ../c-api/InfraredReaderPoll/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/main.c.o"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/InfraredReaderPoll.dir/main.c.o   -c /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/InfraredReaderPoll/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/main.c.o"
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/InfraredReaderPoll.dir/main.c.o   -c /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/InfraredReaderPoll/main.c
 
 c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/InfraredReaderPoll.dir/main.c.i"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/InfraredReaderPoll/main.c > CMakeFiles/InfraredReaderPoll.dir/main.c.i
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/InfraredReaderPoll/main.c > CMakeFiles/InfraredReaderPoll.dir/main.c.i
 
 c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/InfraredReaderPoll.dir/main.c.s"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/InfraredReaderPoll/main.c -o CMakeFiles/InfraredReaderPoll.dir/main.c.s
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/InfraredReaderPoll/main.c -o CMakeFiles/InfraredReaderPoll.dir/main.c.s
 
 # Object files for target InfraredReaderPoll
 InfraredReaderPoll_OBJECTS = \
@@ -99,12 +99,12 @@ InfraredReaderPoll_EXTERNAL_OBJECTS =
 
 bin/InfraredReaderPoll: c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/main.c.o
 bin/InfraredReaderPoll: c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/build.make
-bin/InfraredReaderPoll: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra_core.so
-bin/InfraredReaderPoll: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra_core_api.so
-bin/InfraredReaderPoll: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra.so
+bin/InfraredReaderPoll: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra_core.so
+bin/InfraredReaderPoll: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra_core_api.so
+bin/InfraredReaderPoll: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra.so
 bin/InfraredReaderPoll: c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../bin/InfraredReaderPoll"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/InfraredReaderPoll.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../bin/InfraredReaderPoll"
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/InfraredReaderPoll.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/build: bin/InfraredReaderPoll
@@ -112,10 +112,10 @@ c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/build: bin/InfraredRe
 .PHONY : c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/build
 
 c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/clean:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll && $(CMAKE_COMMAND) -P CMakeFiles/InfraredReaderPoll.dir/cmake_clean.cmake
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll && $(CMAKE_COMMAND) -P CMakeFiles/InfraredReaderPoll.dir/cmake_clean.cmake
 .PHONY : c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/clean
 
 c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/depend:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/c-api/InfraredReaderPoll /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/c-api/InfraredReaderPoll /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : c-api/InfraredReaderPoll/CMakeFiles/InfraredReaderPoll.dir/depend
 

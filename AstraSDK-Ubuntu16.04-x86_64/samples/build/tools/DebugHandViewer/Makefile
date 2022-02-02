@@ -68,10 +68,10 @@ RM = /usr/cmake-3.17.3-Linux-x86_64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples
+CMAKE_SOURCE_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build
+CMAKE_BINARY_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,14 +100,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer/CMakeFiles/progress.marks
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/DebugHandViewer/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles 0
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/tools/DebugHandViewer/CMakeFiles/progress.marks
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/DebugHandViewer/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/DebugHandViewer/clean
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/DebugHandViewer/clean
 .PHONY : clean
 
 # The main clean target
@@ -117,22 +117,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/DebugHandViewer/preinstall
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/DebugHandViewer/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/DebugHandViewer/preinstall
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/DebugHandViewer/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/rule:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/rule
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/rule
 .PHONY : tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/rule
 
 # Convenience name for target.
@@ -142,7 +142,7 @@ DebugHandViewer: tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/rule
 
 # fast build rule for target.
 DebugHandViewer/fast:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build.make tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build.make tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build
 .PHONY : DebugHandViewer/fast
 
 main.o: main.cpp.o
@@ -151,7 +151,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build.make tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.o
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build.make tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -160,7 +160,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build.make tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.i
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build.make tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -169,7 +169,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build.make tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.s
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(MAKE) $(MAKESILENT) -f tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/build.make tools/DebugHandViewer/CMakeFiles/DebugHandViewer.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -195,6 +195,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

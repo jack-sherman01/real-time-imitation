@@ -63,10 +63,10 @@ RM = /usr/cmake-3.17.3-Linux-x86_64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples
+CMAKE_SOURCE_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build
+CMAKE_BINARY_DIR = /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build
 
 # Include any dependencies generated for this target.
 include sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/depend.make
@@ -79,16 +79,16 @@ include sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/flags.
 
 sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.o: sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/flags.make
 sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.o: ../sfml/SimpleColorViewer-SFML/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.o"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.o -c /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/sfml/SimpleColorViewer-SFML/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.o"
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.o -c /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/sfml/SimpleColorViewer-SFML/main.cpp
 
 sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.i"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/sfml/SimpleColorViewer-SFML/main.cpp > CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.i
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/sfml/SimpleColorViewer-SFML/main.cpp > CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.i
 
 sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.s"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/sfml/SimpleColorViewer-SFML/main.cpp -o CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.s
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/sfml/SimpleColorViewer-SFML/main.cpp -o CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.s
 
 # Object files for target SimpleColorViewer-SFML
 SimpleColorViewer__SFML_OBJECTS = \
@@ -99,9 +99,9 @@ SimpleColorViewer__SFML_EXTERNAL_OBJECTS =
 
 bin/SimpleColorViewer-SFML: sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/main.cpp.o
 bin/SimpleColorViewer-SFML: sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/build.make
-bin/SimpleColorViewer-SFML: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra_core.so
-bin/SimpleColorViewer-SFML: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra_core_api.so
-bin/SimpleColorViewer-SFML: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/lib/libastra.so
+bin/SimpleColorViewer-SFML: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra_core.so
+bin/SimpleColorViewer-SFML: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra_core_api.so
+bin/SimpleColorViewer-SFML: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/lib/libastra.so
 bin/SimpleColorViewer-SFML: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
 bin/SimpleColorViewer-SFML: /usr/lib/x86_64-linux-gnu/libsfml-window.so
 bin/SimpleColorViewer-SFML: /usr/lib/x86_64-linux-gnu/libsfml-system.so
@@ -109,8 +109,8 @@ bin/SimpleColorViewer-SFML: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
 bin/SimpleColorViewer-SFML: /usr/lib/x86_64-linux-gnu/libsfml-window.so
 bin/SimpleColorViewer-SFML: /usr/lib/x86_64-linux-gnu/libsfml-system.so
 bin/SimpleColorViewer-SFML: sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/SimpleColorViewer-SFML"
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SimpleColorViewer-SFML.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/SimpleColorViewer-SFML"
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SimpleColorViewer-SFML.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/build: bin/SimpleColorViewer-SFML
@@ -118,10 +118,10 @@ sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/build: bin/Sim
 .PHONY : sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/build
 
 sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/clean:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML && $(CMAKE_COMMAND) -P CMakeFiles/SimpleColorViewer-SFML.dir/cmake_clean.cmake
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML && $(CMAKE_COMMAND) -P CMakeFiles/SimpleColorViewer-SFML.dir/cmake_clean.cmake
 .PHONY : sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/clean
 
 sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/depend:
-	cd /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/sfml/SimpleColorViewer-SFML /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/sfml/SimpleColorViewer-SFML /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : sfml/SimpleColorViewer-SFML/CMakeFiles/SimpleColorViewer-SFML.dir/depend
 

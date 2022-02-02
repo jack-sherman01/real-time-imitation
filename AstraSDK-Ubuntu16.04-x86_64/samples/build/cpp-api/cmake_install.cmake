@@ -1,4 +1,4 @@
-# Install script for directory: /home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/cpp-api
+# Install script for directory: /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/cpp-api
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/cpp-api/DepthReaderEventCPP/cmake_install.cmake")
-  include("/home/zh/orbbec/AstraSDK-v2.1.3-94bca0f52e-20210608T055717Z-Ubuntu16.04-x86_64/samples/build/cpp-api/ColorReaderEventCPP/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/cpp-api/DepthReaderEventCPP/cmake_install.cmake")
+  include("/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/build/cpp-api/ColorReaderEventCPP/cmake_install.cmake")
 
 endif()
 
