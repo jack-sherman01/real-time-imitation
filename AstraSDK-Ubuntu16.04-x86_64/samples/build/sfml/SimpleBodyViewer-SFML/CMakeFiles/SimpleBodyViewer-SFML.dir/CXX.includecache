@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+../common/key_handler.h
+stdio.h
+-
+stdbool.h
+-
+windows.h
+-
+signal.h
+-
+stdlib.h
+-
+unistd.h
+-
+
 /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/Array.hpp
 
 /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/DeviceController.hpp
@@ -90,6 +104,34 @@ streams/MaskedColor.hpp
 streams/ColorizedBody.hpp
 /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/streams/ColorizedBody.hpp
 
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/astra.h
+astra_core/capi/astra_core.h
+-
+astra_ctypes.h
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/astra_ctypes.h
+streams/body_capi.h
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/streams/body_capi.h
+streams/image_capi.h
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/streams/image_capi.h
+streams/depth_capi.h
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/streams/depth_capi.h
+streams/color_capi.h
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/streams/color_capi.h
+streams/infrared_capi.h
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/streams/infrared_capi.h
+streams/hand_capi.h
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/streams/hand_capi.h
+streams/point_capi.h
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/streams/point_capi.h
+streams/masked_color_capi.h
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/streams/masked_color_capi.h
+streams/colorized_body_capi.h
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/streams/colorized_body_capi.h
+astra_device_control.h
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/astra_device_control.h
+astra_version.h
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/astra_version.h
+
 /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/astra_ctypes.h
 stdint.h
 -
@@ -100,6 +142,12 @@ astra_core/capi/astra_defines.h
 astra_core/capi/astra_types.h
 -
 stdbool.h
+-
+
+/home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/astra_version.h
+astra_core/capi/astra_defines.h
+-
+astra_core/capi/astra_types.h
 -
 
 /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/include/astra/capi/streams/body_capi.h
@@ -483,4 +531,14 @@ sstream
 -
 astra/streams/Body.hpp
 /home/zh/real-time-imitation/AstraSDK-Ubuntu16.04-x86_64/samples/sfml/SimpleBodyViewer-SFML/astra/streams/Body.hpp
+astra/capi/astra.h
+-
+stdio.h
+-
+stdint.h
+-
+stdbool.h
+-
+key_handler.h
+-
 
