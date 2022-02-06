@@ -1,0 +1,20 @@
+{
+    "SensorCoefficientFX":4,
+    "SensorCoefficientFY":4,
+    "SensorCoefficientFZ":2,
+    "SensorCoefficientTX":1,
+    "SensorCoefficientTY":1,
+    "SensorCoefficientTZ":1,
+    "constrainValueFX":5,
+    "constrainValueFY":5,
+    "constrainValueFZ":10,
+    "constrainValueTX":0,
+    "constrainValueTY":0,
+    "constrainValueTZ":1,
+    "minThresholdFX":0.2,
+    "minThresholdFY":0.2,
+    "minThresholdFZ":0.2,
+    "minThresholdTX":0.2,
+    "minThresholdTY":0.2,
+    "minThresholdTZ":0.2
+}

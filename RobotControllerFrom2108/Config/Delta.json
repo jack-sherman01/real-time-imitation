@@ -1,0 +1,118 @@
+{
+    "comment": "This configuration file is set up for the delta robot, which is for imitating the six-axis robot dh configuration. --- the first ---> d: Active arm length; theta: angle; theta_offset: 0, ignored; a: follower arm length; alpha: distribution angle of delta. ---> the second ---> d : static platform radius, a: dynamic platform radius",
+    "num_joints": "3",
+    "dh_table": [
+        {
+            "id": "1",
+            "d": "250",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "650",
+            "alpha": "30"
+        },
+        {
+            "id": "2",
+            "d": "120",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "40",
+            "alpha": "150"
+        },
+        {
+            "id": "3",
+            "d": "200",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "150",
+            "alpha": "270"
+        }
+    ],
+    "zero_point": [
+        {
+            "id": "1",
+            "coder_cnt": "3071577"
+        },
+        {
+            "id": "2",
+            "coder_cnt": "4523195"
+        },
+        {
+            "id": "3",
+            "coder_cnt": "4473132"
+        }
+    ],
+    "joints": [
+        {
+            "id": "1",
+            "min": "30",
+            "max": "100",
+            "angle": "90.0",
+            "coder_cnt": "3071620"
+        },
+        {
+            "id": "2",
+            "min": "30",
+            "max": "100",
+            "angle": "90.0",
+            "coder_cnt": "4523207"
+        },
+        {
+            "id": "3",
+            "min": "30",
+            "max": "100",
+            "angle": "90.0",
+            "coder_cnt": "4474331"
+        }
+    ],
+    "motors": [
+        {
+            "id": "1",
+            "gear_ratio": "50",
+            "bits": "23",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        },
+        {
+            "id": "2",
+            "gear_ratio": "50",
+            "bits": "23",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        },
+        {
+            "id": "3",
+            "gear_ratio": "50",
+            "bits": "23",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        }
+    ],
+    "driver": {
+        "enable": [
+            {
+                "cmd_word": "6"
+            },
+            {
+                "cmd_word": "7"
+            },
+            {
+                "cmd_word": "15"
+            }
+        ],
+        "disable": [
+            {
+                "cmd_word": "7"
+            }
+        ],
+        "clear_warning": [
+            {
+                "cmd_word": "128"
+            }
+        ],
+        "ignore_status": [
+            {
+                "status_word": "4648"
+            }
+        ]
+    }
+}

@@ -1,0 +1,183 @@
+{
+    "num_joints": "6",
+    "dh_table": [
+        {
+            "id": "1",
+            "d": "383",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "180",
+            "alpha": "-90"
+        },
+        {
+            "id": "2",
+            "d": "0",
+            "theta": "var",
+            "theta_offset": "-90",
+            "a": "600",
+            "alpha": "180"
+        },
+        {
+            "id": "3",
+            "d": "0",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "0",
+            "alpha": "90"
+        },
+        {
+            "id": "4",
+            "d": "680",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "0",
+            "alpha": "-90"
+        },
+        {
+            "id": "5",
+            "d": "0",
+            "theta": "var",
+            "theta_offset": "-90",
+            "a": "0",
+            "alpha": "-90"
+        },
+        {
+            "id": "6",
+            "d": "-137",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "0",
+            "alpha": "0"
+        }
+    ],
+    "zero_point": [
+        {
+            "id": "1",
+            "coder_cnt": "11"
+        },
+        {
+            "id": "2",
+            "coder_cnt": "22"
+        },
+        {
+            "id": "3",
+            "coder_cnt": "33"
+        },
+        {
+            "id": "4",
+            "coder_cnt": "44"
+        },
+        {
+            "id": "5",
+            "coder_cnt": "55"
+        },
+        {
+            "id": "6",
+            "coder_cnt": "66"
+        }
+    ],
+    "joints": [
+        {
+            "id": "1",
+            "coder_cnt": "1001",
+            "angle": "0"
+        },
+        {
+            "id": "2",
+            "coder_cnt": "1002",
+            "angle": "0"
+        },
+        {
+            "id": "3",
+            "coder_cnt": "1003",
+            "angle": "0"
+        },
+        {
+            "id": "4",
+            "coder_cnt": "1004",
+            "angle": "0"
+        },
+        {
+            "id": "5",
+            "coder_cnt": "1005",
+            "angle": "0"
+        },
+        {
+            "id": "6",
+            "coder_cnt": "1006",
+            "angle": "0"
+        }
+    ],
+    "motors": [
+        {
+            "id": "1",
+            "gear_ratio": "121",
+            "bits": "16",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        },
+        {
+            "id": "2",
+            "gear_ratio": "121",
+            "bits": "16",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        },
+        {
+            "id": "3",
+            "gear_ratio": "121",
+            "bits": "16",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        },
+        {
+            "id": "4",
+            "gear_ratio": "75",
+            "bits": "16",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        },
+        {
+            "id": "5",
+            "gear_ratio": "67.5",
+            "bits": "16",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        },
+        {
+            "id": "6",
+            "gear_ratio": "50",
+            "bits": "16",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        }
+    ],
+    "driver": {
+        "enable": [
+            {
+                "cmd_word": "6"
+            },
+            {
+                "cmd_word": "7"
+            },
+            {
+                "cmd_word": "15"
+            }
+        ],
+        "disable": [
+            {
+                "cmd_word": "0"
+            }
+        ],
+        "clear_warning": [
+            {
+                "cmd_word": "128"
+            }
+        ],
+        "ignore_status": [
+            {
+                "status_word": "4648"
+            }
+        ]
+    }
+}

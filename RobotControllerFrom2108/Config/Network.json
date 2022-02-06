@@ -1,0 +1,22 @@
+{
+  "six_axis":
+  { 
+    "ip_address":"127.0.0.1",
+    "port_teach":"7000"  
+  },
+  "scara":
+  {
+    "ip_address":"127.0.0.1",
+    "port_teach":"9000"   
+  },
+  "delta":
+  {
+    "ip_address":"127.0.0.1",
+    "port_teach":"7000"
+  },
+  "seven_axis":
+  {
+    "ip_address":"127.0.0.1",
+    "port_teach":"7000"
+  }
+}

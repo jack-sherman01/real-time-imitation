@@ -1,0 +1,22 @@
+{
+  "six_axis":
+  { 
+    "ip_address":"127.0.0.1",
+    "port_sim":"7002"  
+  },
+  "scara":
+  {
+    "ip_address":"127.0.0.1",
+    "port_sim":"9002"   
+  },
+  "delta":
+  {
+    "ip_address":"127.0.0.1",
+    "port_sim":"8002"
+  },
+  "seven_axis":
+  {
+    "ip_address":"127.0.0.1",
+    "port_sim":"7002"
+  }
+}

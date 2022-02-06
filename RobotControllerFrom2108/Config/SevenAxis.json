@@ -1,0 +1,221 @@
+{
+    "num_joints": "7",
+    "dh_table": [
+        {
+            "id": "1",
+            "d": "-293.45",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "0",
+            "alpha": "90"
+        },
+        {
+            "id": "2",
+            "d": "0",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "0",
+            "alpha": "90"
+        },
+        {
+            "id": "3",
+            "d": "-419.4",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "0",
+            "alpha": "90"
+        },
+        {
+            "id": "4",
+            "d": "0",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "0",
+            "alpha": "90"
+        },
+        {
+            "id": "5",
+            "d": "-303.96",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "0",
+            "alpha": "90"
+        },
+        {
+            "id": "6",
+            "d": "0",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "0",
+            "alpha": "90"
+        },
+        {
+            "id": "7",
+            "d": "-182.95",
+            "theta": "var",
+            "theta_offset": "0",
+            "a": "0",
+            "alpha": "180"
+        }
+    ],
+    "zero_point": [
+        {
+            "id": "1",
+            "coder_cnt": "45556",
+            "angle": "180.0"
+        },
+        {
+            "id": "2",
+            "coder_cnt": "-12448",
+            "angle": "180.0"
+        },
+        {
+            "id": "3",
+            "coder_cnt": "21928",
+            "angle": "180.0"
+        },
+        {
+            "id": "4",
+            "coder_cnt": "-2620",
+            "angle": "180.0"
+        },
+        {
+            "id": "5",
+            "coder_cnt": "-35028",
+            "angle": "180.0"
+        },
+        {
+            "id": "6",
+            "coder_cnt": "-1349",
+            "angle": "180.0"
+        },
+        {
+            "id": "7",
+            "coder_cnt": "-1349",
+            "angle": "180.0"
+        }
+    ],
+    "joints": [
+        {
+            "id": "1",
+            "min": "-720",
+            "max": "720",
+            "angle": "179.99000549316406",
+            "coder_cnt": "0"
+        },
+        {
+            "id": "2",
+            "min": "45",
+            "max": "315",
+            "angle": "208.97000122070312",
+            "coder_cnt": "0"
+        },
+        {
+            "id": "3",
+            "min": "-720",
+            "max": "720",
+            "angle": "180.01699829101562",
+            "coder_cnt": "0"
+        },
+        {
+            "id": "4",
+            "min": "21",
+            "max": "330",
+            "angle": "87.722702026367188",
+            "coder_cnt": "0"
+        },
+        {
+            "id": "5",
+            "min": "-720",
+            "max": "720",
+            "angle": "180.0260009765625",
+            "coder_cnt": "0"
+        },
+        {
+            "id": "6",
+            "min": "60",
+            "max": "300",
+            "angle": "202.44700622558594",
+            "coder_cnt": "0"
+        },
+        {
+            "id": "7",
+            "min": "-720",
+            "max": "720",
+            "angle": "180.00700378417969",
+            "coder_cnt": "0"
+        }
+    ],
+    "motors": [
+        {
+            "id": "1",
+            "gear_ratio": "121",
+            "bits": "16",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        },
+        {
+            "id": "2",
+            "gear_ratio": "121",
+            "bits": "16",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        },
+        {
+            "id": "3",
+            "gear_ratio": "121",
+            "bits": "16",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        },
+        {
+            "id": "4",
+            "gear_ratio": "75",
+            "bits": "16",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        },
+        {
+            "id": "5",
+            "gear_ratio": "67.5",
+            "bits": "16",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        },
+        {
+            "id": "6",
+            "gear_ratio": "50",
+            "bits": "16",
+            "velocity_ave_max": "40",
+            "velocity_instant_max": "100"
+        }
+    ],
+    "driver": {
+        "enable": [
+            {
+                "cmd_word": "6"
+            },
+            {
+                "cmd_word": "7"
+            },
+            {
+                "cmd_word": "15"
+            }
+        ],
+        "disable": [
+            {
+                "cmd_word": "0"
+            }
+        ],
+        "clear_warning": [
+            {
+                "cmd_word": "128"
+            }
+        ],
+        "ignore_status": [
+            {
+                "status_word": "4648"
+            }
+        ]
+    }
+}
