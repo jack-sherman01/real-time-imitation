@@ -34,213 +34,72 @@
 #include <chrono>
 #include <iomanip>
 
+//include for communicate with robot
+// #include "TimeClock.hpp"
 
-/*
-code below is for BodyReaderPull 
-*/
-void output_floor(astra_bodyframe_t bodyFrame)
-{
-    astra_floor_info_t floorInfo;
+#include <sys/types.h>
+#include <sys/shm.h>
 
-    astra_status_t rc = astra_bodyframe_floor_info(bodyFrame, &floorInfo);
-    if (rc != ASTRA_STATUS_SUCCESS)
-    {
-        printf("Error %d in astra_bodyframe_floor_info()\n", rc);
-        return;
-    }
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <functional>
+#include <thread>
+#include <vector>
+#include <numeric>
+using namespace std;
+#include <math.h>
 
-    const astra_bool_t floorDetected = floorInfo.floorDetected;
-    const astra_plane_t* floorPlane = &floorInfo.floorPlane;
-    const astra_floormask_t* floorMask = &floorInfo.floorMask;
+#ifdef _WIN32
+    #define WIN32_LEAN_AND_MEAN
+    #include <windows.h>
+    #include <winsock2.h>
+    #pragma comment(lib, "Ws2_32.lib")
+#else
+    #include <arpa/inet.h>
+    #include <sys/socket.h>
+    #include <netdb.h>
+    #include <unistd.h>
+#endif
 
-    if (floorDetected != ASTRA_FALSE)
-    {
-        printf("Floor plane: [%f, %f, %f, %f]\n",
-               floorPlane->a,
-               floorPlane->b,
-               floorPlane->c,
-               floorPlane->d);
+typedef unsigned int uint32;
+typedef int int32;
+typedef unsigned short uint16;
+typedef short int16;
+typedef unsigned char byte;
 
-        const int32_t bottomCenterIndex = floorMask->width / 2 + floorMask->width * (floorMask->height - 1);
-        printf("Floor mask: width: %d height: %d bottom center value: %d\n",
-            floorMask->width,
-            floorMask->height,
-            floorMask->data[bottomCenterIndex]);
-    }
-}
+struct CameraResponse {
+    double  header;
+    double  status;
+    double Camera_Position_X;
+    double Camera_Position_Y;
+    double Camera_Position_Z;
+    double Camera_orientation_X;
+    double Camera_orientation_Y;
+    double Camera_orientation_Z;
+};
 
-void output_body_mask(astra_bodyframe_t bodyFrame)
-{
-    astra_bodymask_t bodyMask;
+struct CameraData {
+    double RightHand_X;
+    double RightHand_Y;
+    double RightHand_Z;
+    double RightHandOritation_X;
+    double RightHandOritation_Y;
+    double RightHandOritation_Z;
+};
+typedef struct GetAverValueFromSensor {
+	double right_hand_x;
+	double right_hand_y;
+	double right_hand_z;
+	double right_hand_oritation_x;
+	double right_hand_oritation_y;
+	double right_hand_oritation_z;
+}GetAverValue;
 
-    const astra_status_t rc = astra_bodyframe_bodymask(bodyFrame, &bodyMask);
-    if (rc != ASTRA_STATUS_SUCCESS)
-    {
-        printf("Error %d in astra_bodyframe_bodymask()\n", rc);
-        return;
-    }
 
-    const int32_t centerIndex = bodyMask.width / 2 + bodyMask.width * bodyMask.height / 2;
-    printf("Body mask: width: %d height: %d center value: %d\n",
-        bodyMask.width,
-        bodyMask.height,
-        bodyMask.data[centerIndex]);
-}
-
-void output_bodyframe_info(astra_bodyframe_t bodyFrame)
-{
-    astra_bodyframe_info_t info;
-
-    const astra_status_t rc = astra_bodyframe_info(bodyFrame, &info);
-    if (rc != ASTRA_STATUS_SUCCESS)
-    {
-        printf("Error %d in astra_bodyframe_info()\n", rc);
-        return;
-    }
-
-    // width and height of floor mask, body mask, and the size of depth image
-    // that joint depth position is relative to.
-    const int32_t width = info.width;
-    const int32_t height = info.height;
-
-    printf("BodyFrame info: Width: %d Height: %d\n",
-        width,
-        height);
-}
-
-void output_joint(const int32_t bodyId, const astra_joint_t* joint)
-{
-    // jointType is one of ASTRA_JOINT_* which exists for each joint type
-    const astra_joint_type_t jointType = joint->type;
-
-    // jointStatus is one of:
-    // ASTRA_JOINT_STATUS_NOT_TRACKED = 0,
-    // ASTRA_JOINT_STATUS_LOW_CONFIDENCE = 1,
-    // ASTRA_JOINT_STATUS_TRACKED = 2,
-    const astra_joint_status_t jointStatus = joint->status;
-
-    const astra_vector3f_t* worldPos = &joint->worldPosition;
-
-    // depthPosition is in pixels from 0 to width and 0 to height
-    // where width and height are member of astra_bodyframe_info_t
-    // which is obtained from astra_bodyframe_info().
-    const astra_vector2f_t* depthPos = &joint->depthPosition;
-
-    printf("Body %u Joint %d status %d @ Right_hand_world_position (%.1f, %.1f, %.1f) depth (%.1f, %.1f)\n",
-           bodyId,
-           jointType,
-           jointStatus,
-           worldPos->x,
-           worldPos->y,
-           worldPos->z,
-           depthPos->x,
-           depthPos->y);
-
-    // orientation is a 3x3 rotation matrix where the column vectors also
-    // represent the orthogonal basis vectors for the x, y, and z axes.
-    const astra_matrix3x3_t* orientation = &joint->orientation;
-    const astra_vector3f_t* xAxis = &orientation->xAxis; // same as orientation->m00, m10, m20
-    const astra_vector3f_t* yAxis = &orientation->yAxis; // same as orientation->m01, m11, m21
-    const astra_vector3f_t* zAxis = &orientation->zAxis; // same as orientation->m02, m12, m22
-
-    printf("Right Hand orientation x: [%f %f %f]\n", xAxis->x, xAxis->y, xAxis->z);
-    printf("Right Hand orientation y: [%f %f %f]\n", yAxis->x, yAxis->y, yAxis->z);
-    printf("Right Hand orientation z: [%f %f %f]\n", zAxis->x, zAxis->y, zAxis->z);
-}
-
-void output_hand_poses(const astra_body_t* body)
-{
-    const astra_handpose_info_t* handPoses = &body->handPoses;
-
-    // astra_handpose_t is one of:
-    // ASTRA_HANDPOSE_UNKNOWN = 0
-    // ASTRA_HANDPOSE_GRIP = 1
-    const astra_handpose_t leftHandPose = handPoses->leftHand;
-    const astra_handpose_t rightHandPose = handPoses->rightHand;
-
-    // printf("Body %d Left hand pose: %d Right hand pose: %d\n",
-    //     body->id,
-    //     leftHandPose,
-    //     rightHandPose);
-}
-
-void output_bodies(astra_bodyframe_t bodyFrame)
-{
-    int i;
-    astra_body_list_t bodyList;
-    const astra_status_t rc = astra_bodyframe_body_list(bodyFrame, &bodyList);
-    if (rc != ASTRA_STATUS_SUCCESS)
-    {
-        printf("Error %d in astra_bodyframe_body_list()\n", rc);
-        return;
-    }
-
-    for(i = 0; i < bodyList.count; ++i)
-    {
-        astra_body_t* body = &bodyList.bodies[i];
-
-        // Pixels in the body mask with the same value as bodyId are
-        // from the same body.
-        astra_body_id_t bodyId = body->id;
-
-        // bodyStatus is one of:
-        // ASTRA_BODY_STATUS_NOT_TRACKING = 0,
-        // ASTRA_BODY_STATUS_LOST = 1,
-        // ASTRA_BODY_STATUS_TRACKING_STARTED = 2,
-        // ASTRA_BODY_STATUS_TRACKING = 3,
-        astra_body_status_t bodyStatus = body->status;
-
-        if (bodyStatus == ASTRA_BODY_STATUS_TRACKING_STARTED)
-        {
-            printf("Body Id: %d Status: Tracking started\n", bodyId);
-        }
-        if (bodyStatus == ASTRA_BODY_STATUS_TRACKING)
-        {
-            printf("Body Id: %d Status: Tracking\n", bodyId);
-        }
-
-        if (bodyStatus == ASTRA_BODY_STATUS_TRACKING_STARTED ||
-            bodyStatus == ASTRA_BODY_STATUS_TRACKING)
-        {
-            const astra_vector3f_t* centerOfMass = &body->centerOfMass;
-
-            const astra_body_tracking_feature_flags_t features = body->features;
-            const bool jointTrackingEnabled       = (features & ASTRA_BODY_TRACKING_JOINTS)     == ASTRA_BODY_TRACKING_JOINTS;
-            const bool handPoseRecognitionEnabled = (features & ASTRA_BODY_TRACKING_HAND_POSES) == ASTRA_BODY_TRACKING_HAND_POSES;
-
-            // printf("Body %d CenterOfMass (%f, %f, %f) Joint Tracking Enabled: %s Hand Pose Recognition Enabled: %s\n",
-            //     bodyId,
-            //     centerOfMass->x, centerOfMass->y, centerOfMass->z,
-            //     jointTrackingEnabled       ? "True" : "False",
-            //     handPoseRecognitionEnabled ? "True" : "False");
-
-            const astra_joint_t* joint = &body->joints[ASTRA_JOINT_RIGHT_HAND];
-
-            output_joint(bodyId, joint);
-
-            output_hand_poses(body);
-        }
-        else if (bodyStatus == ASTRA_BODY_STATUS_LOST)
-        {
-            printf("Body %u Status: Tracking lost.\n", bodyId);
-        }
-        else // bodyStatus == ASTRA_BODY_STATUS_NOT_TRACKING
-        {
-            printf("Body Id: %d Status: Not Tracking\n", bodyId);
-        }
-    }
-}
-
-void output_bodyframe(astra_bodyframe_t bodyFrame)
-{
-    output_floor(bodyFrame);
-
-    output_body_mask(bodyFrame);
-
-    output_bodyframe_info(bodyFrame);
-
-    output_bodies(bodyFrame);
-}
 
 /*
 code for SimpleBodyViewer below
@@ -1181,9 +1040,440 @@ astra::ColorStream configure_color(astra::StreamReader& reader)
 /* **** gap line **** */
 
 
+
+/*
+code below is for BodyReaderPull 
+*/
+void output_floor(astra_bodyframe_t bodyFrame)
+{
+    astra_floor_info_t floorInfo;
+
+    astra_status_t rc = astra_bodyframe_floor_info(bodyFrame, &floorInfo);
+    if (rc != ASTRA_STATUS_SUCCESS)
+    {
+        printf("Error %d in astra_bodyframe_floor_info()\n", rc);
+        return;
+    }
+
+    const astra_bool_t floorDetected = floorInfo.floorDetected;
+    const astra_plane_t* floorPlane = &floorInfo.floorPlane;
+    const astra_floormask_t* floorMask = &floorInfo.floorMask;
+
+    if (floorDetected != ASTRA_FALSE)
+    {
+        printf("Floor plane: [%f, %f, %f, %f]\n",
+               floorPlane->a,
+               floorPlane->b,
+               floorPlane->c,
+               floorPlane->d);
+
+        const int32_t bottomCenterIndex = floorMask->width / 2 + floorMask->width * (floorMask->height - 1);
+        printf("Floor mask: width: %d height: %d bottom center value: %d\n",
+            floorMask->width,
+            floorMask->height,
+            floorMask->data[bottomCenterIndex]);
+    }
+}
+
+void output_body_mask(astra_bodyframe_t bodyFrame)
+{
+    astra_bodymask_t bodyMask;
+
+    const astra_status_t rc = astra_bodyframe_bodymask(bodyFrame, &bodyMask);
+    if (rc != ASTRA_STATUS_SUCCESS)
+    {
+        printf("Error %d in astra_bodyframe_bodymask()\n", rc);
+        return;
+    }
+
+    const int32_t centerIndex = bodyMask.width / 2 + bodyMask.width * bodyMask.height / 2;
+    printf("Body mask: width: %d height: %d center value: %d\n",
+        bodyMask.width,
+        bodyMask.height,
+        bodyMask.data[centerIndex]);
+}
+
+void output_bodyframe_info(astra_bodyframe_t bodyFrame)
+{
+    astra_bodyframe_info_t info;
+
+    const astra_status_t rc = astra_bodyframe_info(bodyFrame, &info);
+    if (rc != ASTRA_STATUS_SUCCESS)
+    {
+        printf("Error %d in astra_bodyframe_info()\n", rc);
+        return;
+    }
+
+    // width and height of floor mask, body mask, and the size of depth image
+    // that joint depth position is relative to.
+    const int32_t width = info.width;
+    const int32_t height = info.height;
+
+    printf("BodyFrame info: Width: %d Height: %d\n",
+        width,
+        height);
+}
+
+GetAverValue getAverValue;
+void output_joint(const int32_t bodyId, const astra_joint_t* joint)
+{
+    // jointType is one of ASTRA_JOINT_* which exists for each joint type
+    const astra_joint_type_t jointType = joint->type;
+
+    // jointStatus is one of:
+    // ASTRA_JOINT_STATUS_NOT_TRACKED = 0,
+    // ASTRA_JOINT_STATUS_LOW_CONFIDENCE = 1,
+    // ASTRA_JOINT_STATUS_TRACKED = 2,
+    const astra_joint_status_t jointStatus = joint->status;
+
+    const astra_vector3f_t* worldPos = &joint->worldPosition;
+
+    // depthPosition is in pixels from 0 to width and 0 to height
+    // where width and height are member of astra_bodyframe_info_t
+    // which is obtained from astra_bodyframe_info().
+    const astra_vector2f_t* depthPos = &joint->depthPosition;
+
+    getAverValue.right_hand_x = worldPos->x;
+    getAverValue.right_hand_y = worldPos->z;//note: it was showed that physical meaning of z and y are opposite,so here 
+    getAverValue.right_hand_z = worldPos->y;
+    printf("Body %u Joint %d status %d @ Right_hand_world_position (%.1f, %.1f, %.1f) depth (%.1f, %.1f)\n",
+           bodyId,
+           jointType,
+           jointStatus,
+           worldPos->x,
+           worldPos->z,
+           worldPos->y,
+           depthPos->x,
+           depthPos->y);
+
+    // orientation is a 3x3 rotation matrix where the column vectors also
+    // represent the orthogonal basis vectors for the x, y, and z axes.
+    const astra_matrix3x3_t* orientation = &joint->orientation;
+    const astra_vector3f_t* xAxis = &orientation->xAxis; // same as orientation->m00, m10, m20
+    const astra_vector3f_t* yAxis = &orientation->yAxis; // same as orientation->m01, m11, m21
+    const astra_vector3f_t* zAxis = &orientation->zAxis; // same as orientation->m02, m12, m22
+
+    printf("Right Hand orientation x: [%f %f %f]\n", xAxis->x, xAxis->y, xAxis->z);
+    printf("Right Hand orientation y: [%f %f %f]\n", yAxis->x, yAxis->y, yAxis->z);
+    printf("Right Hand orientation z: [%f %f %f]\n", zAxis->x, zAxis->y, zAxis->z);
+}
+
+void output_hand_poses(const astra_body_t* body)
+{
+    const astra_handpose_info_t* handPoses = &body->handPoses;
+
+    // astra_handpose_t is one of:
+    // ASTRA_HANDPOSE_UNKNOWN = 0
+    // ASTRA_HANDPOSE_GRIP = 1
+    const astra_handpose_t leftHandPose = handPoses->leftHand;
+    const astra_handpose_t rightHandPose = handPoses->rightHand;
+
+    // printf("Body %d Left hand pose: %d Right hand pose: %d\n",
+    //     body->id,
+    //     leftHandPose,
+    //     rightHandPose);
+}
+
+void output_bodies(astra_bodyframe_t bodyFrame)
+{
+    int i;
+    astra_body_list_t bodyList;
+    const astra_status_t rc = astra_bodyframe_body_list(bodyFrame, &bodyList);
+    if (rc != ASTRA_STATUS_SUCCESS)
+    {
+        printf("Error %d in astra_bodyframe_body_list()\n", rc);
+        return;
+    }
+
+    for(i = 0; i < bodyList.count; ++i)
+    {
+        astra_body_t* body = &bodyList.bodies[i];
+
+        // Pixels in the body mask with the same value as bodyId are
+        // from the same body.
+        astra_body_id_t bodyId = body->id;
+
+        // bodyStatus is one of:
+        // ASTRA_BODY_STATUS_NOT_TRACKING = 0,
+        // ASTRA_BODY_STATUS_LOST = 1,
+        // ASTRA_BODY_STATUS_TRACKING_STARTED = 2,
+        // ASTRA_BODY_STATUS_TRACKING = 3,
+        astra_body_status_t bodyStatus = body->status;
+
+        if (bodyStatus == ASTRA_BODY_STATUS_TRACKING_STARTED)
+        {
+            printf("Body Id: %d Status: Tracking started\n", bodyId);
+        }
+        if (bodyStatus == ASTRA_BODY_STATUS_TRACKING)
+        {
+            printf("Body Id: %d Status: Tracking\n", bodyId);
+        }
+
+        if (bodyStatus == ASTRA_BODY_STATUS_TRACKING_STARTED ||
+            bodyStatus == ASTRA_BODY_STATUS_TRACKING)
+        {
+            const astra_vector3f_t* centerOfMass = &body->centerOfMass;
+
+            const astra_body_tracking_feature_flags_t features = body->features;
+            const bool jointTrackingEnabled       = (features & ASTRA_BODY_TRACKING_JOINTS)     == ASTRA_BODY_TRACKING_JOINTS;
+            const bool handPoseRecognitionEnabled = (features & ASTRA_BODY_TRACKING_HAND_POSES) == ASTRA_BODY_TRACKING_HAND_POSES;
+
+            // printf("Body %d CenterOfMass (%f, %f, %f) Joint Tracking Enabled: %s Hand Pose Recognition Enabled: %s\n",
+            //     bodyId,
+            //     centerOfMass->x, centerOfMass->y, centerOfMass->z,
+            //     jointTrackingEnabled       ? "True" : "False",
+            //     handPoseRecognitionEnabled ? "True" : "False");
+
+            const astra_joint_t* joint = &body->joints[ASTRA_JOINT_RIGHT_HAND];
+
+            output_joint(bodyId, joint);
+
+            output_hand_poses(body);
+        }
+        else if (bodyStatus == ASTRA_BODY_STATUS_LOST)
+        {
+            printf("Body %u Status: Tracking lost.\n", bodyId);
+        }
+        else // bodyStatus == ASTRA_BODY_STATUS_NOT_TRACKING
+        {
+            printf("Body Id: %d Status: Not Tracking\n", bodyId);
+        }
+    }
+}
+
+void output_bodyframe(astra_bodyframe_t bodyFrame)
+{
+    // output_floor(bodyFrame);
+
+    // output_body_mask(bodyFrame);
+
+    // output_bodyframe_info(bodyFrame);
+
+    output_bodies(bodyFrame);
+}
+
+
+
+/**
+ * @brief Camera传感器设备类
+ * 用于对Camera传感器设备的控制
+ */
+class CameraSensor :public MultiFrameListener, public BodyVisualizer
+{
+private:
+    /* data */
+    const char *ipAddress = "192.168.1.1";
+    const uint16 port = 49151;
+    bool isPrint = false;
+    int duration = 10;
+    bool canStartThreading = true;
+    int shm_id;
+    int shm_keyValue;
+    struct CameraData *shm_cameraData=NULL;
+
+    struct CameraResponse cameraResponse;
+    // CameraData ftAbsValue = {0, 0, 0, 0, 0, 0};
+    CameraData cameraAverValue = {0, 0, 0, 0, 0, 0};
+    CameraData SensorCoefficient  = {1, 1, 1, 1, 1, 1};
+    CameraData MinThreshold = {0.2, 0.4, 0.8, 0.02, 0.02, 0.02};
+
+    
+
+
+
+public:
+    CameraSensor();
+    CameraSensor(int keyValue);
+    ~CameraSensor();
+
+    // MultiFrameListener listener_stream;
+    // BodyVisualizer listener;
+
+    /* 大小端字节调整 */
+    int16 swap_int16(int16 val);    
+    void SwapCameraResponseBytes();
+
+    /* 连接Camera传感器设备 */
+    int Open();
+
+    /* 获取标定信息 */
+    int GetCalibrationInfo();
+    /* 打印标定信息 */
+    void ShowCalibrationInfo();
+
+
+    /* 读取ft数据 */
+    int ReadCamera();
+    void processCameraData();
+
+    /*读取时通过平均值读取*/
+    void ReadCamerabyMean();
+
+    /* 打印ft数据 */
+    void ShowResponse();
+
+    void ftCycle();
+    void startThread();
+
+    /* 获得Camera传感器的初始平均值 */
+    void getMeanValue();
+
+    /* 获得Camera传感器的实时绝对值 */
+    void getAbsoluteValue();
+
+    /* 0附近邻域值舍入 */
+    void roundThrehold(CameraData &ftValue);
+    
+
+    void setPrintFlag(bool flag, int fps=100);
+
+    void getWindow();
+
+};
+CameraSensor::CameraSensor()
+{
+    this->shm_keyValue = 1002;
+ 
+
+
+    cout<<"构造函数"<<endl;
+
+}
+CameraSensor::CameraSensor(int keyValue)
+{
+    this->shm_keyValue = keyValue;
+}
+
+CameraSensor::~CameraSensor()
+{
+}
+
+void CameraSensor::getWindow()
+{
+
+}
+int CameraSensor::Open()
+{
+    
+    void *shm = NULL;
+    this->shm_id = shmget((key_t)this->shm_keyValue, 0, 0);
+    if(this->shm_id != -1)
+    {
+        shmctl(shm_id, IPC_RMID, 0);
+    }
+    this->shm_id = shmget((key_t)this->shm_keyValue, sizeof(struct CameraData), 0666|IPC_CREAT);
+    if(this->shm_id == -1)
+    {
+        fprintf(stderr, "shm of ft get failed\n");
+        exit(EXIT_FAILURE);
+    }
+    shm = shmat(shm_id, (void*)0, 0);
+    if(shm == (void*)-1) 
+    {
+        fprintf(stderr, "shmat of ft get failed\n");
+        exit(EXIT_FAILURE);
+    }
+    this->shm_cameraData = (struct CameraData *)shm;
+    
+    return 0;
+}
+/*
+code for BodyReaderPoll below
+*/
+/* 读取camera数据 */
+int CameraSensor::ReadCamera()
+{
+    printf("BodyReaderPoll begin \n");
+    astra_streamsetconnection_t sensor_body_reader_poll;
+
+    astra_streamset_open("device/default", &sensor_body_reader_poll);
+
+    astra_reader_t reader_body_reader_poll;
+    astra_reader_create(sensor_body_reader_poll, &reader_body_reader_poll);
+
+    astra_bodystream_t bodyStream_body_reader_poll;
+    astra_reader_get_bodystream(reader_body_reader_poll, &bodyStream_body_reader_poll);
+
+    astra_stream_start(bodyStream_body_reader_poll);
+
+    /*
+    code for BodyReaderPoll below
+    */
+    astra_update(); //如果没有这个函数，那么在没有update的情况下，相机检测不到新的success状态，则无法进入到if中。
+    astra_reader_frame_t frame;
+    astra_status_t rc = astra_reader_open_frame(reader_body_reader_poll, 0, &frame);
+    cout<<rc<<endl;
+    if (rc == ASTRA_STATUS_SUCCESS)
+    {
+        astra_bodyframe_t bodyFrame;
+        astra_frame_get_bodyframe(frame, &bodyFrame);
+        astra_frame_index_t frameIndex;
+        astra_bodyframe_get_frameindex(bodyFrame, &frameIndex);
+        printf("Frame index: %d\n", frameIndex);
+        output_bodyframe(bodyFrame);
+        printf("----------------------------\n");
+        astra_reader_close_frame(&frame);
+    }
+    /*gap line*/
+
+
+
+
+    return 0;
+}
+
+
+void CameraSensor::ReadCamerabyMean()
+{
+    vector<double> Fx(5);
+    vector<double> Fy(5);
+    vector<double> Fz(5);
+    vector<double> Tx(5);
+    vector<double> Ty(5);
+    vector<double> Tz(5);
+    for (size_t i = 0; i < 5; i++)
+    {
+        ReadCamera();
+        Fx[i]= getAverValue.right_hand_x;
+	    Fy[i]= getAverValue.right_hand_y;
+	    Fz[i]= getAverValue.right_hand_z;
+	    Tx[i]= getAverValue.right_hand_oritation_x;
+	    Ty[i]= getAverValue.right_hand_oritation_y;
+        Tz[i]= getAverValue.right_hand_oritation_z;	 
+    }
+    
+    cameraResponse.Camera_Position_X = (accumulate(Fx.begin(), Fx.end(), 0.0))/Fx.size();
+    cameraResponse.Camera_Position_Y = (accumulate(Fy.begin(), Fy.end(), 0.0))/Fy.size();
+    cameraResponse.Camera_Position_Z = (accumulate(Fz.begin(), Fz.end(), 0.0))/Fz.size();
+    cameraResponse.Camera_orientation_X = (accumulate(Tx.begin(), Tx.end(), 0.0))/Tx.size();
+    cameraResponse.Camera_orientation_Y = (accumulate(Ty.begin(), Ty.end(), 0.0))/Ty.size();
+    cameraResponse.Camera_orientation_Z = (accumulate(Tz.begin(), Tz.end(), 0.0))/Tz.size();
+
+    this->shm_cameraData->RightHand_X         = cameraResponse.Camera_Position_X;
+    this->shm_cameraData->RightHand_Y         = cameraResponse.Camera_Position_Y;
+    this->shm_cameraData->RightHand_Z         = cameraResponse.Camera_Position_Z;
+    this->shm_cameraData->RightHandOritation_X= cameraResponse.Camera_orientation_X;
+    this->shm_cameraData->RightHandOritation_Y= cameraResponse.Camera_orientation_Y;
+    this->shm_cameraData->RightHandOritation_Z= cameraResponse.Camera_orientation_Z;
+
+    printf("mean value: RightHand_X:%.4f  RightHand_Y:%.4f RightHand_Z: %.4f  RightHandOritation_X %.4f\r\n", 
+    this->shm_cameraData->RightHand_X,
+    this->shm_cameraData->RightHand_Y,
+    this->shm_cameraData->RightHand_Z,
+    this->shm_cameraData->RightHandOritation_X );
+
+}
+
+
+
+
+
 int main(int argc, char** argv)
 {
     astra::initialize();
+    CameraSensor CS;
+    CS.Open();
+    // CS.getWindow();
     
     if (argc == 2)
     {
@@ -1200,8 +1490,6 @@ int main(int argc, char** argv)
         orbbec_body_tracking_set_license(licenseString);
     }
 
-    sf::RenderWindow window(sf::VideoMode(1280, 960), "Simple Body Viewer");
-
 #ifdef _WIN32
     auto fullscreenStyle = sf::Style::None;
 #else
@@ -1210,11 +1498,19 @@ int main(int argc, char** argv)
 
     const sf::VideoMode fullScreenMode = sf::VideoMode::getFullscreenModes()[0];
     const sf::VideoMode windowedMode(1280, 960);
+    //set up two windows
+    sf::RenderWindow window(sf::VideoMode(1280, 960), "Simple Body Viewer");
+    // sf::RenderWindow *pWindow;
+    // pWindow = &window;
+    sf::RenderWindow window1(windowedMode, "Stream Viewer");
 
+    MultiFrameListener listener_stream;
+    BodyVisualizer listener;
+
+    //test: 先加入了另外两个窗口的启动，最下面一部分时BodyReaderPoll, 注意 gap line
     /*
     code below is for simple stream viewer
     */
-    sf::RenderWindow window1(windowedMode, "Stream Viewer");
     astra::StreamSet streamSet;
     astra::StreamReader reader_stream = streamSet.create_reader();
 
@@ -1225,19 +1521,19 @@ int main(int argc, char** argv)
 
     auto irStream = configure_ir(reader_stream, false);
 
-    MultiFrameListener listener_stream;
     listener_stream.set_mode(MODE_COLOR);
 
     reader_stream.add_listener(listener_stream);
     /* **** gap line **** */
 
-
+    /*
+    code below is for simple body viewer
+    */
     bool isFullScreen = false;
 
     astra::StreamSet sensor;
     astra::StreamReader reader = sensor.create_reader();
 
-    BodyVisualizer listener;
 
     auto depthStream = configure_depth(reader);
     depthStream.start();
@@ -1263,53 +1559,35 @@ int main(int argc, char** argv)
 
     // HandPoses includes Joints and Segmentation
     astra::BodyTrackingFeatureFlags features = astra::BodyTrackingFeatureFlags::HandPoses;
+    /* **** gap line **** */
 
-    /*
-    code for BodyReaderPoll below
-    */
-    astra_streamsetconnection_t sensor_body_reader_poll;
 
-    astra_streamset_open("device/default", &sensor_body_reader_poll);
 
-    astra_reader_t reader_body_reader_poll;
-    astra_reader_create(sensor_body_reader_poll, &reader_body_reader_poll);
 
-    astra_bodystream_t bodyStream_body_reader_poll;
-    astra_reader_get_bodystream(reader_body_reader_poll, &bodyStream_body_reader_poll);
-
-    astra_stream_start(bodyStream_body_reader_poll);
-
-    /*gap line*/
 
     while (window.isOpen())
+    // while (1)
     {
-        astra_update();
+        // astra_update();
+        CS.ReadCamerabyMean();//namely BodyReaderPoll
 
-        /*
-        code for BodyReaderPoll below
-        */
-        astra_reader_frame_t frame;
-        astra_status_t rc = astra_reader_open_frame(reader_body_reader_poll, 0, &frame);
+        /**
+         *  TODO 
+         * 将以下window的draw_to，display 放到 ReadCamerabyMean() 的循环中去，提高video窗口的刷新频率。
+         * */
+        // clear the window with black color
+        window.clear(sf::Color::Black);
+        listener.draw_to(window);
+        window.display();
 
-        if (rc == ASTRA_STATUS_SUCCESS)
-        {
-            astra_bodyframe_t bodyFrame;
-            astra_frame_get_bodyframe(frame, &bodyFrame);
+        window1.clear(sf::Color::Black);
+        listener_stream.draw_to(window1, sf::Vector2f(0.f, 0.f), sf::Vector2f(window1.getSize().x, window1.getSize().y));
+        window1.display();
 
-            astra_frame_index_t frameIndex;
-            astra_bodyframe_get_frameindex(bodyFrame, &frameIndex);
-            printf("Frame index: %d\n", frameIndex);
-
-            output_bodyframe(bodyFrame);
-
-            printf("----------------------------\n");
-
-            astra_reader_close_frame(&frame);
-        }
-        /*gap line*/
+ 
 
         sf::Event event;
-        while (window.pollEvent(event))
+        while (window.pollEvent(event) | window1.pollEvent(event))
         {
             switch (event.type)
             {
@@ -1411,15 +1689,7 @@ int main(int argc, char** argv)
             }
         }
 
-        // clear the window with black color
-        window.clear(sf::Color::Black);
 
-        listener.draw_to(window);
-        window.display();
-
-        window1.clear(sf::Color::Black);
-        listener_stream.draw_to(window1, sf::Vector2f(0.f, 0.f), sf::Vector2f(window1.getSize().x, window1.getSize().y));
-        window1.display();
     }
 
     astra::terminate();
