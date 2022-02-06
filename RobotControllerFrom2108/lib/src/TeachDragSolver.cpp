@@ -326,7 +326,7 @@ void TeachDragSolver:: Drag()
     Vector3d last_target_position{command_.target_pose_(0),command_.target_pose_(1),command_.target_pose_(2)};
 
     /**
-     *  todo： target_pose 更新条件需要设置严谨一些，比如考虑posture奇异性，避免突然抖振 */
+     * todo： target_pose 更新条件需要设置严谨一些，比如考虑posture奇异性，避免突然抖振 */
     // if((current_position - last_target_position).norm() > 5)
     if((current_pose - command_.target_pose_).norm() > 5)
     {
