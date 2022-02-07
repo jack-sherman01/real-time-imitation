@@ -1399,7 +1399,10 @@ int CameraSensor::ReadCamera()
     /*
     code for BodyReaderPoll below
     */
-    astra_update(); //如果没有这个函数，那么在没有update的情况下，相机检测不到新的success状态，则无法进入到if中。
+   /**
+    * note: 如果没有astra_update这个函数，那么在没有update的情况下，相机检测不到新的success状态，则无法进入到if中。
+    * */
+    astra_update(); 
     astra_reader_frame_t frame;
     astra_status_t rc = astra_reader_open_frame(reader_body_reader_poll, 0, &frame);
     cout<<rc<<endl;
@@ -1425,38 +1428,38 @@ int CameraSensor::ReadCamera()
 
 void CameraSensor::ReadCamerabyMean()
 {
-    vector<double> Fx(5);
-    vector<double> Fy(5);
-    vector<double> Fz(5);
-    vector<double> Tx(5);
-    vector<double> Ty(5);
-    vector<double> Tz(5);
-    for (size_t i = 0; i < 5; i++)
-    {
+    // vector<double> Fx(5);
+    // vector<double> Fy(5);
+    // vector<double> Fz(5);
+    // vector<double> Tx(5);
+    // vector<double> Ty(5);
+    // vector<double> Tz(5);
+    // for (size_t i = 0; i < 5; i++)
+    // {
         ReadCamera();
-        Fx[i]= getAverValue.right_hand_x;
-	    Fy[i]= getAverValue.right_hand_y;
-	    Fz[i]= getAverValue.right_hand_z;
-	    Tx[i]= getAverValue.right_hand_oritation_x;
-	    Ty[i]= getAverValue.right_hand_oritation_y;
-        Tz[i]= getAverValue.right_hand_oritation_z;	 
-    }
+        // Fx[i]= getAverValue.right_hand_x;
+	    // Fy[i]= getAverValue.right_hand_y;
+	    // Fz[i]= getAverValue.right_hand_z;
+	    // Tx[i]= getAverValue.right_hand_oritation_x;
+	    // Ty[i]= getAverValue.right_hand_oritation_y;
+        // Tz[i]= getAverValue.right_hand_oritation_z;	 
+    // }
     
-    cameraResponse.Camera_Position_X = (accumulate(Fx.begin(), Fx.end(), 0.0))/Fx.size();
-    cameraResponse.Camera_Position_Y = (accumulate(Fy.begin(), Fy.end(), 0.0))/Fy.size();
-    cameraResponse.Camera_Position_Z = (accumulate(Fz.begin(), Fz.end(), 0.0))/Fz.size();
-    cameraResponse.Camera_orientation_X = (accumulate(Tx.begin(), Tx.end(), 0.0))/Tx.size();
-    cameraResponse.Camera_orientation_Y = (accumulate(Ty.begin(), Ty.end(), 0.0))/Ty.size();
-    cameraResponse.Camera_orientation_Z = (accumulate(Tz.begin(), Tz.end(), 0.0))/Tz.size();
+    // cameraResponse.Camera_Position_X = (accumulate(Fx.begin(), Fx.end(), 0.0))/Fx.size();
+    // cameraResponse.Camera_Position_Y = (accumulate(Fy.begin(), Fy.end(), 0.0))/Fy.size();
+    // cameraResponse.Camera_Position_Z = (accumulate(Fz.begin(), Fz.end(), 0.0))/Fz.size();
+    // cameraResponse.Camera_orientation_X = (accumulate(Tx.begin(), Tx.end(), 0.0))/Tx.size();
+    // cameraResponse.Camera_orientation_Y = (accumulate(Ty.begin(), Ty.end(), 0.0))/Ty.size();
+    // cameraResponse.Camera_orientation_Z = (accumulate(Tz.begin(), Tz.end(), 0.0))/Tz.size();
 
-    this->shm_cameraData->RightHand_X         = cameraResponse.Camera_Position_X;
-    this->shm_cameraData->RightHand_Y         = cameraResponse.Camera_Position_Y;
-    this->shm_cameraData->RightHand_Z         = cameraResponse.Camera_Position_Z;
-    this->shm_cameraData->RightHandOritation_X= cameraResponse.Camera_orientation_X;
-    this->shm_cameraData->RightHandOritation_Y= cameraResponse.Camera_orientation_Y;
-    this->shm_cameraData->RightHandOritation_Z= cameraResponse.Camera_orientation_Z;
+    this->shm_cameraData->RightHand_X            =   getAverValue.right_hand_x;
+    this->shm_cameraData->RightHand_Y            =   getAverValue.right_hand_y;
+    this->shm_cameraData->RightHand_Z            =   getAverValue.right_hand_z;
+    this->shm_cameraData->RightHandOritation_X   =   getAverValue.right_hand_oritation_x;
+    this->shm_cameraData->RightHandOritation_Y   =   getAverValue.right_hand_oritation_y;
+    this->shm_cameraData->RightHandOritation_Z   =   getAverValue.right_hand_oritation_z;	 
 
-    printf("mean value: RightHand_X:%.4f  RightHand_Y:%.4f RightHand_Z: %.4f  RightHandOritation_X %.4f\r\n", 
+    printf("raw value: RightHand_X:%.4f  RightHand_Y:%.4f RightHand_Z: %.4f  RightHandOritation_X %.4f\r\n", 
     this->shm_cameraData->RightHand_X,
     this->shm_cameraData->RightHand_Y,
     this->shm_cameraData->RightHand_Z,
