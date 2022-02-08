@@ -1,5 +1,5 @@
 {
-    "VelocityRate": 35.0,
+    "VelocityRate": 25.0,
     "maxVelocity" : 15.0,
     "FxyzSensorsitivity": 10.0,
     "TxyzSensorsitivity": 1.0,
@@ -15,10 +15,10 @@
     "constrainValueTX":0.2,
     "constrainValueTY":0.2,
     "constrainValueTZ":0.2,
-    "minThresholdFX":0.22,
-    "minThresholdFY":0.22,
-    "minThresholdFZ":0.82,
-    "minThresholdTX":0.02,
-    "minThresholdTY":0.02,
-    "minThresholdTZ":0.02
+    "minThresholdFX":20.0,
+    "minThresholdFY":20.0,
+    "minThresholdFZ":20.0,
+    "minThresholdTX":20.0,
+    "minThresholdTY":20.0,
+    "minThresholdTZ":20.0
 }

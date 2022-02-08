@@ -19,7 +19,7 @@ void TeachDragSolver::Init()
             用户手感：constrainValue / SensorCoefficient 是用户能调节拖动速度的力/力矩范围 
          */
         ptree pt;
-        read_json("../Config/dragTeachConfigJacob.json", pt);
+        read_json("../../Config/dragTeachConfigJacob.json", pt);
         command_.VelocityRate = pt.get<double>("VelocityRate");
         command_.maxVelocity = min(pt.get<double>("maxVelocity"), 20.0);
         command_.FxyzSensorsitivity = pt.get<double>("FxyzSensorsitivity");
@@ -244,12 +244,13 @@ void TeachDragSolver::GetMean()
         command_.mean_value(3) += command_.shared_ftdata_->TorqueX;
         command_.mean_value(4) += command_.shared_ftdata_->TorqueY;
         command_.mean_value(5) += command_.shared_ftdata_->TorqueZ;
+        usleep(5*5000);// because frequency of camera data  is too low
     }
     for (size_t i = 0; i < 6; i++)
     {
         command_.mean_value[i] /= 15;
     }   
-    cout << "before process mean_value : " << setiosflags(ios::fixed) << setprecision(4) << command_.mean_value.transpose() << endl;
+    cout << "mean_value : " << setiosflags(ios::fixed) << setprecision(4) << command_.mean_value.transpose() << endl;
 
 }
 
