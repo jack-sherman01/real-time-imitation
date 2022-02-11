@@ -44,7 +44,7 @@ private:
 
                 p->tcp_server_state_ = COMMUNICATE_READY;
 
-                cout << "INFO: sim READY." << endl;
+                // cout << "INFO: sim READY." << endl;
 
                 while(true) {
                     if(p->tcp_server_state_ == COMMUNICATE_READY) {

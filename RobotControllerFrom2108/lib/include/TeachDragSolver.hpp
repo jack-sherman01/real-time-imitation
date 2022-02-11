@@ -49,6 +49,8 @@ private:
     bool run_finished_ = true;
     Vector6d max_vel_mm_or_deg_;
     Vector6d mean_value;
+    Vector6d last_mean_value;
+    Vector6d last_last_mean_value;
     Vector6d abs_value;
     Vector6d SensorCoefficient;
     Vector6d constrainValue;
@@ -109,6 +111,8 @@ public:
         shared_ftdata_ = (FTData *)shm_ftdata;
         /*----------------------------------*/
 
+        last_last_mean_value<<0.0, 0.0, 0.0, 0.0, 0.0, 0.0;
+
     }
     
 
@@ -162,6 +166,7 @@ public:
     void Drag();//拖动控制
     void clearTrajectory();
     void GetMean();//get mean value of seneor data when it begin drag state
+    void UpdateMeanValue();//to save a mean value buffer, to address the low frequency of camera.
     void GetAbsValue();//get the diff value between mean_value and current_value.
     void JTrajectorySmooth();
     void UpdateTrajectoryFileName(string timestamp);

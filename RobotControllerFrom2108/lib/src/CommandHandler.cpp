@@ -40,7 +40,7 @@ bool CommandHandler::HandlerTcpServerMsg() {
             return false;
         }
 
-        cout << "type ===== " << tcp_server_command_data_.type << endl;
+        // cout << "type ===== " << tcp_server_command_data_.type << endl;
 
         switch (tcp_server_command_data_.type)
         {
@@ -118,7 +118,7 @@ bool CommandHandler::HandlerTcpServerMsg() {
             }
             tcp_server_.tcp_send_data_.parms[6] = robot_.GetCollisionValue();
             tcp_server_.tcp_send_data_.error = NONE;
-            printf("collision value:%f\n", robot_.GetCollisionValue());
+            // printf("collision value:%f\n", robot_.GetCollisionValue());
             break;   
         }
 

@@ -14,6 +14,7 @@
 #include "Interface/CmpRIKApi.h"
 
 #include "config.h"
+#include "TimeClock.hpp"
 
 #define LIB_CALCULATE_PATH "./lib/libCmpRIK.so"
 
@@ -164,6 +165,7 @@ int main()
     try
     {
         bool init_flag = false;
+        TimerClock TC;
         while (1)  {
             if (!init_flag) {
                 (*SET_ARGS)(set_p);
@@ -181,6 +183,8 @@ int main()
             (*SET_ARGS)(set_p);
             usleep(cycle_bus_time_ms*1000);
         }
+        cout <<"TIEM duration: "<<TC.getTimerMilliSec()<<endl;
+
     }
     catch(const std::exception& e) {
         std::cerr << "Error in while loop" << std::endl;

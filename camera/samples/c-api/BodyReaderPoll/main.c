@@ -215,17 +215,18 @@ void output_bodies(astra_bodyframe_t bodyFrame)
 
 void output_bodyframe(astra_bodyframe_t bodyFrame)
 {
-    output_floor(bodyFrame);
+    // output_floor(bodyFrame);
 
-    output_body_mask(bodyFrame);
+    // output_body_mask(bodyFrame);
 
-    output_bodyframe_info(bodyFrame);
+    // output_bodyframe_info(bodyFrame);
 
     output_bodies(bodyFrame);
 }
 
 int main(int argc, char* argv[])
 {
+    
     set_key_handler();
 
     astra_initialize();

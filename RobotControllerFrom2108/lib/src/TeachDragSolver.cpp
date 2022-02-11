@@ -244,7 +244,7 @@ void TeachDragSolver::GetMean()
         command_.mean_value(3) += command_.shared_ftdata_->TorqueX;
         command_.mean_value(4) += command_.shared_ftdata_->TorqueY;
         command_.mean_value(5) += command_.shared_ftdata_->TorqueZ;
-        usleep(5*5000);// because frequency of camera data  is too low
+        usleep(4*1000);//delay 2 millionSecond because frequency of camera data  is too low
     }
     for (size_t i = 0; i < 6; i++)
     {
@@ -252,6 +252,12 @@ void TeachDragSolver::GetMean()
     }   
     cout << "mean_value : " << setiosflags(ios::fixed) << setprecision(4) << command_.mean_value.transpose() << endl;
 
+}
+
+void TeachDragSolver::UpdateMeanValue()
+{
+    command_.last_mean_value = command_.mean_value;
+    command_.last_last_mean_value = command_.last_mean_value;
 }
 
 void TeachDragSolver::GetAbsValue()
@@ -286,7 +292,7 @@ void TeachDragSolver::GetAbsValue()
     command_.abs_value(4) = command_.shared_ftdata_->TorqueY;
     command_.abs_value(5) = command_.shared_ftdata_->TorqueZ;
 
-    command_.abs_value = command_.abs_value - command_.mean_value;
+    command_.abs_value = command_.abs_value - command_.last_last_mean_value;
     cout << "before process abs_value : " << setiosflags(ios::fixed) << setprecision(4) << command_.abs_value.transpose() << endl;
 
     for (size_t i = 0; i < 6; ++i)
@@ -312,13 +318,13 @@ void TeachDragSolver::GetAbsValue()
 }
 void TeachDragSolver:: Drag()
 {
-    if(index_mean==0)
+    // if(index_mean==0)
     {
         GetMean();
     }
     // index_mean = (index_mean+1)%100;
-    index_mean=1;
-    GetMean();
+    // index_mean=1;
+    UpdateMeanValue();
     GetAbsValue();
 
     Vector6d last_target_pose = command_.target_pose_;
@@ -346,6 +352,7 @@ void TeachDragSolver:: Drag()
         cout << "[cal] Jacob Velocity:" << command_.jacobVelocity_.transpose() << endl;
 
         robot_.SetTargetJointsVelocity(command_.jacobVelocity_);
+        robot_.SetCurrentJointsAndUpdate();//update current_joints_ for simulation
     }
 }
 void TeachDragSolver::UpdateTrajectoryFileName(string timestamp)

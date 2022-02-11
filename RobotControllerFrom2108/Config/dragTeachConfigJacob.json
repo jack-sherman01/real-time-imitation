@@ -1,7 +1,7 @@
 {
     "VelocityRate": 25.0,
     "maxVelocity" : 15.0,
-    "FxyzSensorsitivity": 10.0,
+    "FxyzSensorsitivity": 0.1,
     "TxyzSensorsitivity": 1.0,
     "SensorCoefficientFX":-1.0,
     "SensorCoefficientFY":-1.0,

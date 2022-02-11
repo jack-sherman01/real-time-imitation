@@ -45,7 +45,7 @@ private:
 
                 while (true) {
                     if (p->tcp_server_state_ == COMMUNICATE_READY) {
-                        cout << "INFO: READY. " << endl;
+                        // cout << "INFO: READY. " << endl;
                         try {
                             p->tcp_server_state_ = WAITING_RECV;
                             p->sync_tcp_server_->RecvMsg(p->tcp_recv_data_);
@@ -59,10 +59,10 @@ private:
                     }
 
                     else if (p->tcp_server_state_ == EXECUTED_COMMAND) {
-                        cout << "INFO: EXECUTED. " << endl;
+                        // cout << "INFO: EXECUTED. " << endl;
                         try {
                             p->CommandData2TcpSendData();
-                            cout << "send.. " << endl;
+                            // cout << "send.. " << endl;
                             p->sync_tcp_server_->SendMsg(p->tcp_send_data_);
                             p->tcp_server_state_ = COMMUNICATE_READY;
                         }
@@ -118,7 +118,7 @@ public:
     }
 
     void SetState(const TcpServerState &state) {
-        cout << "INFO: set state. " << endl;
+        // cout << "INFO: set state. " << endl;
         tcp_server_state_ = state;
     }
 

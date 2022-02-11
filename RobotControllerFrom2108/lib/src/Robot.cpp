@@ -565,8 +565,8 @@ bool Robot::SetTargetJointsVelocityFromPathModel() {
     // cout << "误差: " << error_joints.transpose() << endl;
     // VectorXd kp(error_joints.size());
 
-    // target_joints_velocity_ +=  (error_joints*0.65  + (error_joints - last_error_joints)*0.005);        // old: 0.15, 0.005
-    GetTargetVelWithffCurrent();
+    target_joints_velocity_ +=  (error_joints*0.65  + (error_joints - last_error_joints)*0.005);        // old: 0.15, 0.005
+    // GetTargetVelWithffCurrent();
 
 #ifdef SAVE_FILE
     fstream file;
@@ -592,9 +592,12 @@ bool Robot::SetTargetJointsVelocity(const VectorXd &joints_velocity) {
         }
         else
         {
-            target_joints_velocity_(i) = joints_velocity(i);
+            target_joints_velocity_(i) = 30*joints_velocity(i);//new add: 10*
         }
     }
+cout<<"target_joints_velocity_ in controller: "<<target_joints_velocity_.transpose()<<endl;
+// usleep(5*1000);
+cout<<"current_joints_ in controller: "<<current_joints_.transpose()<<endl;
 
 #ifdef SAVE_FILE
     fstream file;
