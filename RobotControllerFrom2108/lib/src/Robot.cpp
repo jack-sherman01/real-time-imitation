@@ -588,7 +588,7 @@ bool Robot::SetTargetJointsVelocity(const VectorXd &joints_velocity) {
         if( constrainJoints(tmpTargetJoints(i), min_joints_(i), max_joints_(i)) )
         {
             cout << "INFO: Robot::SetTargetJointsVelocity " << i << " exceeds limits" << endl;
-            target_joints_velocity_(i) = 0.f; 
+            target_joints_velocity_(i) = 30; 
         }
         else
         {
@@ -596,7 +596,7 @@ bool Robot::SetTargetJointsVelocity(const VectorXd &joints_velocity) {
         }
     }
 cout<<"target_joints_velocity_ in controller: "<<target_joints_velocity_.transpose()<<endl;
-// usleep(5*1000);
+// usleep(10*1000);
 cout<<"current_joints_ in controller: "<<current_joints_.transpose()<<endl;
 
 #ifdef SAVE_FILE

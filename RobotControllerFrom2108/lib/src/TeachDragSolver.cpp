@@ -236,7 +236,7 @@ void TeachDragSolver::TeachReplay_Cartesian()
 void TeachDragSolver::GetMean()
 {
     command_.mean_value = Vector6d::Zero(6);
-    for (size_t i = 0; i < 15; i++)
+    for (size_t i = 0; i < 10; i++)
     {
         command_.mean_value(0) += command_.shared_ftdata_->ForceX;
         command_.mean_value(1) += command_.shared_ftdata_->ForceY;
@@ -244,11 +244,11 @@ void TeachDragSolver::GetMean()
         command_.mean_value(3) += command_.shared_ftdata_->TorqueX;
         command_.mean_value(4) += command_.shared_ftdata_->TorqueY;
         command_.mean_value(5) += command_.shared_ftdata_->TorqueZ;
-        usleep(4*1000);//delay 2 millionSecond because frequency of camera data  is too low
+        usleep(1*1000);//delay 2 millionSecond because frequency of camera data  is too low
     }
     for (size_t i = 0; i < 6; i++)
     {
-        command_.mean_value[i] /= 15;
+        command_.mean_value[i] /= 10;
     }   
     cout << "mean_value : " << setiosflags(ios::fixed) << setprecision(4) << command_.mean_value.transpose() << endl;
 
@@ -256,8 +256,8 @@ void TeachDragSolver::GetMean()
 
 void TeachDragSolver::UpdateMeanValue()
 {
-    command_.last_mean_value = command_.mean_value;
     command_.last_last_mean_value = command_.last_mean_value;
+    command_.last_mean_value = command_.mean_value;
 }
 
 void TeachDragSolver::GetAbsValue()

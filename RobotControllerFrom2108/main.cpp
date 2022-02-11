@@ -161,7 +161,7 @@ int main()
         return -1;
     }
     srand(time(NULL));
-    int cycle_bus_time_ms = 5;
+    int cycle_bus_time_ms = 15;
     try
     {
         bool init_flag = false;

@@ -151,43 +151,43 @@
             "id": "1",
             "gear_ratio": "121",
             "bits": "16",
-            "velocity_ave_max": "40",
-            "velocity_instant_max": "100"
+            "velocity_ave_max": "200",
+            "velocity_instant_max": "200"
         },
         {
             "id": "2",
             "gear_ratio": "121",
             "bits": "16",
-            "velocity_ave_max": "40",
-            "velocity_instant_max": "100"
+            "velocity_ave_max": "200",
+            "velocity_instant_max": "200"
         },
         {
             "id": "3",
             "gear_ratio": "121",
             "bits": "16",
-            "velocity_ave_max": "40",
-            "velocity_instant_max": "100"
+            "velocity_ave_max": "200",
+            "velocity_instant_max": "200"
         },
         {
             "id": "4",
             "gear_ratio": "75",
             "bits": "16",
-            "velocity_ave_max": "40",
-            "velocity_instant_max": "100"
+            "velocity_ave_max": "200",
+            "velocity_instant_max": "200"
         },
         {
             "id": "5",
             "gear_ratio": "67.5",
             "bits": "16",
-            "velocity_ave_max": "40",
-            "velocity_instant_max": "100"
+            "velocity_ave_max": "200",
+            "velocity_instant_max": "200"
         },
         {
             "id": "6",
             "gear_ratio": "50",
             "bits": "16",
-            "velocity_ave_max": "40",
-            "velocity_instant_max": "100"
+            "velocity_ave_max": "200",
+            "velocity_instant_max": "200"
         }
     ],
     "driver": {

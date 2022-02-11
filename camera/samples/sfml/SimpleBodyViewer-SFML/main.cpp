@@ -1148,14 +1148,14 @@ void output_joint(const int32_t bodyId, const astra_joint_t* joint)
 
     // orientation is a 3x3 rotation matrix where the column vectors also
     // represent the orthogonal basis vectors for the x, y, and z axes.
-    const astra_matrix3x3_t* orientation = &joint->orientation;
-    const astra_vector3f_t* xAxis = &orientation->xAxis; // same as orientation->m00, m10, m20
-    const astra_vector3f_t* yAxis = &orientation->yAxis; // same as orientation->m01, m11, m21
-    const astra_vector3f_t* zAxis = &orientation->zAxis; // same as orientation->m02, m12, m22
+    // const astra_matrix3x3_t* orientation = &joint->orientation;
+    // const astra_vector3f_t* xAxis = &orientation->xAxis; // same as orientation->m00, m10, m20
+    // const astra_vector3f_t* yAxis = &orientation->yAxis; // same as orientation->m01, m11, m21
+    // const astra_vector3f_t* zAxis = &orientation->zAxis; // same as orientation->m02, m12, m22
 
-    printf("Right Hand orientation x: [%f %f %f]\n", xAxis->x, xAxis->y, xAxis->z);
-    printf("Right Hand orientation y: [%f %f %f]\n", yAxis->x, yAxis->y, yAxis->z);
-    printf("Right Hand orientation z: [%f %f %f]\n", zAxis->x, zAxis->y, zAxis->z);
+    // printf("Right Hand orientation x: [%f %f %f]\n", xAxis->x, xAxis->y, xAxis->z);
+    // printf("Right Hand orientation y: [%f %f %f]\n", yAxis->x, yAxis->y, yAxis->z);
+    // printf("Right Hand orientation z: [%f %f %f]\n", zAxis->x, zAxis->y, zAxis->z);
 }
 
 void output_hand_poses(const astra_body_t* body)
@@ -1228,7 +1228,7 @@ void output_bodies(astra_bodyframe_t bodyFrame)
 
             output_joint(bodyId, joint);
 
-            output_hand_poses(body);
+            // output_hand_poses(body);
         }
         else if (bodyStatus == ASTRA_BODY_STATUS_LOST)
         {
@@ -1383,7 +1383,7 @@ code for BodyReaderPoll below
 /* 读取camera数据 */
 int CameraSensor::ReadCamera()
 {
-    printf("BodyReaderPoll begin \n");
+    // printf("BodyReaderPoll begin \n");
     astra_streamsetconnection_t sensor_body_reader_poll;
 
     astra_streamset_open("device/default", &sensor_body_reader_poll);
@@ -1405,14 +1405,14 @@ int CameraSensor::ReadCamera()
     astra_update(); 
     astra_reader_frame_t frame;
     astra_status_t rc = astra_reader_open_frame(reader_body_reader_poll, 0, &frame);
-    cout<<rc<<endl;
+    // cout<<rc<<endl;
     if (rc == ASTRA_STATUS_SUCCESS)
     {
         astra_bodyframe_t bodyFrame;
         astra_frame_get_bodyframe(frame, &bodyFrame);
-        astra_frame_index_t frameIndex;
-        astra_bodyframe_get_frameindex(bodyFrame, &frameIndex);
-        printf("Frame index: %d\n", frameIndex);
+        // astra_frame_index_t frameIndex;
+        // astra_bodyframe_get_frameindex(bodyFrame, &frameIndex);
+        // printf("Frame index: %d\n", frameIndex);
         output_bodyframe(bodyFrame);
         printf("----------------------------\n");
         astra_reader_close_frame(&frame);
